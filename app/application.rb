@@ -10,11 +10,10 @@ class Application
     if req.path==(/item/)
       item_name = req.path.split("items/").last
       if item = @@items.find{|i| i.name == item_name}
-      resp.write "You requested the cart"
+        resp.write "#{item.price}"
     else
       resp.write "Route not found"
       resp.status = 404
-    end
     end
 
     resp.finish
