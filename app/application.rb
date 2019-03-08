@@ -8,7 +8,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path=="/item/"
-      item = req.path.split("items/")
+      item = req.path.split("items/").last
       resp.write "You requested the cart"
     else
       resp.write "Route not found"
