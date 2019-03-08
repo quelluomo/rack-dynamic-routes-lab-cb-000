@@ -8,7 +8,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path==(/item/)
-      item = req.path.split("items/").last
+      item_name = req.path.split("items/").last
       if item = @@items.find{|i| i.name == item_name}
       resp.write "You requested the cart"
     else
